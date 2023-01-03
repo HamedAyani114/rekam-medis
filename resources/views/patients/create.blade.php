@@ -57,7 +57,7 @@
                     <label for="" class="form-label">Tinggi badan</label>
                     <input type="text" class="form-control" name="tinggi badan" id="" placeholder="Tinggi badan">
                   </div>
-                  <button type="submit">Submit</button>
+                  <button class="btn btn-primary" type="submit">Submit</button>
                   
                   
                 </form>

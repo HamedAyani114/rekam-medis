@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\DoctorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/home', function () {
 
 // route resource for patient
 Route::resource('patient', PatientController::class);
+Route::resource('doctor', DoctorController::class);
 // Route::resource('home.dashboard', PatientController::class);
 
 // Route::get('/pasien', [PatientController::class, 'index'])->name('patient.index');
