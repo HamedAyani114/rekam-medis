@@ -18,8 +18,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+    return view('home.dashboard');
+});
+// Route::get('/pasien', function () {
+//     return view('home.pasien');
+// });
+
 // route resource for patient
 Route::resource('patient', PatientController::class);
+// Route::resource('home.dashboard', PatientController::class);
+
 // Route::get('/pasien', [PatientController::class, 'index'])->name('patient.index');
 // Route::get('/pasien/create', [PatientController::class, 'create'])->name('patient.create');
 // Route::post('/pasien', [PatientController::class, 'store'])->name('patient.store');
