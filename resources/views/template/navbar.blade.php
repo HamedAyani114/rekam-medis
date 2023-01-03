@@ -10,7 +10,7 @@
             <a style=" color:white;" class="nav-link active" aria-current="page" href="{{ route('patient.index') }}">pasien</a>
           </li>
           <li class="nav-item">
-            <a style=" color:white;" class="nav-link" href="{{ route('patient.create') }}">Input data</a>
+            <a style=" color:white;" class="nav-link" href="{{ route('doctor.index') }}">Doctor</a>
           </li>
           <li class="nav-item">
             <a style=" color:white;" class="nav-link" href="">About me</a>

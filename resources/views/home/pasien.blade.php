@@ -17,7 +17,7 @@
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">nama</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                  </div>
+                </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">no bpjs</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
