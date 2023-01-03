@@ -51,7 +51,7 @@ class PatientController extends Controller
         $datapasien->tinggi_badan=$request->tinggi_badan;
         // dd($datapasien);
         $datapasien->save();
-        // return redirect()->route('patients.index')->with('success', 'Data Pasien Berhasil Ditambahkan');
+        return redirect()->route('patient.index')->with('success', 'Data Pasien Berhasil Ditambahkan');
         // $datapasien=$request->validate([
         //     'id_pasien' => 'required|size:5',
         //     'no_bpjs' => 'required|size:13',
@@ -65,8 +65,8 @@ class PatientController extends Controller
         //     'tinggi_badan' => 'required',
         // ]);
         
-        dd($datapasien);
-        Patient::create($datapasien);
+        // dd($datapasien);
+        // Patient::create($datapasien);
         // Patient::create($request->all());
         // return redirect()->route('patients.index')->with('success', 'Patient created successfully.');
     }
