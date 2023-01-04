@@ -9,7 +9,10 @@
   </head>
   <body>
     {{-- navbar --}}
-    @include('template.navbar')
+    @include('layouts.app')
+    @include('layouts.partials.navbar')
+
+    @include('layouts.partials.sidebar')
     {{-- end --}}
     <div class="row ms-1 p-3">
         <div class="col-sm-6">
@@ -55,9 +58,9 @@
 
     
     {{-- footer --}}
-    <footer>
+    {{-- <footer>
         @include('template.footer')
-    </footer>
+    </footer> --}}
     {{--end footer --}}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
