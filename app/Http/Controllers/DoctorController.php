@@ -39,7 +39,7 @@ class DoctorController extends Controller
             'polies' => Poly::all()
         ]);
     }
-
+ 
     /**
      * Store a newly created resource in storage.
      *
@@ -61,7 +61,7 @@ class DoctorController extends Controller
             'password' => ['required', 'min:5']
         ]);
 
-        // create doctor id
+        // generate doctor id ai
         $doctorCount = Doctor::count() + 1;
         if($doctorCount < 10) {
             $code = '00' . $doctorCount;
@@ -74,7 +74,7 @@ class DoctorController extends Controller
 
         $validatedData['id_dokter'] = 'DO' . $code;
 
-        // create user first, and get the user id for doctor
+        // simpan user , get id user doctor
         User::create([
             'username' => $request->username,
             'password' => bcrypt($request->password),
@@ -83,7 +83,7 @@ class DoctorController extends Controller
         $user_id = User::where('username', $request->username)->pluck('id');
         $validatedData['id'] = $user_id[0];
 
-        // store doctor data
+        // SImpan doctor data
         Doctor::create($validatedData);
 
         return redirect()->route('doctor.index')->with('success', 'Data berhasil ditambahkan');
