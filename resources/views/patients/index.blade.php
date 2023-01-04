@@ -74,11 +74,11 @@
                                                             <span class="sr-only">Toggle Dropdown</span>
                                                         </button>
                                                         <div class="dropdown-menu" role="menu">
-                                                            <a class="dropdown-item text-info"
-                                                                {{-- href="{{ route('pasien.show', $patient->id_pasien) }}"> --}}
+                                                            {{-- <a class="dropdown-item text-info"
+                                                                href="{{ route('pasien.show', $patient->id_pasien) }}">
                                                                 <i class="fa-solid fa-circle-info"></i>
                                                                 Detail
-                                                            </a>
+                                                            </a> --}}
 
                                                             {{-- @can('nurse')
                                                                 <a class="dropdown-item text-warning"
