@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Polies;
+use App\Models\Poly;
 
-class PoliesController extends Controller
+class PolyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class PoliesController extends Controller
      */
     public function index()
     {
-        $polies = Polies::all();
+        //
+        $polies = Poly::all();
         return view('polies.index', compact('polies'));
     }
 
@@ -38,7 +39,7 @@ class PoliesController extends Controller
     public function store(Request $request)
     {
         //
-        $datapoli=new Polies;
+        $datapoli=new Poly();
         $datapoli->id_poli=$request->id_poli;
         $datapoli->nama_poli=$request->nama_poli;
         

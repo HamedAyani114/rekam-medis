@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('polies', function (Blueprint $table) {
-            $table->char('id_poli', 5)->primary();
-            $table->string('nama_poli', 100);
-            $table->timestamps();
+        Schema::table('doctors', function (Blueprint $table) {
+            $table->char('id_poli', 5)->after('id')->nullable();
+            $table->foreign('id_poli')->references('id_poli')->on('polies')
+                ->nullOnDelete();
         });
     }
-    
 
     /**
      * Reverse the migrations.
@@ -28,6 +27,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_polies');
+        Schema::table('doctors', function (Blueprint $table) {
+            //
+        });
     }
 };

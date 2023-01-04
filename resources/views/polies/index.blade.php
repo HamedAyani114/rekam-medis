@@ -5,7 +5,7 @@
         <div class="col-12">
             <div class="card card-primary card-outline">
                 <div class="card-header">
-                    <h3 class="card-title">{{ $pageTitle }}</h3>
+                    {{-- <h3 class="card-title">{{ $pageTitle }}</h3> --}}
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -29,7 +29,7 @@
                                 </button>
 
                                 <!-- Modal -->
-                                {{-- <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
+                                <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
                                     aria-labelledby="addModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -76,7 +76,7 @@
                                             </form>
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
 
                                 <table id="polies_table" class="table table-bordered table-striped dataTable dtr-inline"
                                     aria-describedby="polies_table_info">
@@ -85,8 +85,8 @@
                                             <th style="width: 10px">#</th>
                                             <th style="width: 10px">ID</th>
                                             <th>Nama Poli</th>
-                                            <th>Jumlah Dokter</th>
-                                            <th>Jumlah Antrian</th>
+                                            {{-- <th>Jumlah Dokter</th>
+                                            <th>Jumlah Antrian</th> --}}
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -151,9 +151,9 @@
                                                 <td>{{ $loop->iteration }}.</td>
                                                 <td>{{ $poly->id_poli }}</td>
                                                 <td>{{ $poly->nama_poli }}</td>
-                                                <td>{{ $doctors[$index] <= 0 ? 'Belum ada dokter' : $doctors[$index] . ' dokter' }}
+                                                {{-- <td>{{ $doctors[$index] <= 0 ? 'Belum ada dokter' : $doctors[$index] . ' dokter' }} --}}
                                                 </td>
-                                                <td>{{ $queues[$index] <= 0 ? 'Belum ada pasien' : $queues[$index] . ' pasien' }}
+                                                {{-- <td>{{ $queues[$index] <= 0 ? 'Belum ada pasien' : $queues[$index] . ' pasien' }} --}}
                                                 </td>
                                                 <td>
                                                     <div class="btn-group">

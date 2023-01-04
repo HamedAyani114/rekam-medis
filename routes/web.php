@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PatientController;
-use App\Http\Controllers\PoliesController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\PolyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,15 +17,15 @@ use App\Http\Controllers\DoctorController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', function () {
     return view('dashboard.index');
 });
-Route::get('/pasien', function () {
-    return view('home.pasien');
+
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
 });
+// Route::get('/pasien', function () {
+//     return view('home.pasien');
+// });
 Route::get('/poli', function () {
     return view('polies.index');
 });
@@ -33,7 +33,7 @@ Route::get('/poli', function () {
 
 // route resource for patient
 Route::resource('patient', PatientController::class);
-Route::resource('poli', PoliesController::class);
+Route::resource('poli', PolyController::class);
 
 Route::resource('doctor', DoctorController::class);
 // Route::resource('home.dashboard', PatientController::class);
