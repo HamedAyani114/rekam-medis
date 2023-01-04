@@ -82,19 +82,19 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <li class="nav-item">
-                    <a href="{{ route('dashboard.index') }}"
-                        {{-- class="nav-link {{ Route::is('dashboard*') ? 'active' : '' }}"> --}}
+                    {{-- <a href="{{ route('dashboard.index') }}"
+                        class="nav-link {{ Route::is('dashboard*') ? 'active' : '' }}">
                         <i class="nav-icon fa-solid fa-gauge"></i>
                         <p> Dashboard</p>
-                    </a>
+                    </a> --}}
                 </li>
                 {{-- @dd(request()->route()->getPrefix() == '/users') --}}
 
                 {{-- @can('Admin') --}}
                     <li class="nav-item 
-                    {{-- {{ request()->route()->getPrefix() == '/users'? 'menu-open': '' }}"> --}}
+                    {{ request()->route()->getPrefix() == '/users'? 'menu-open': '' }}">
                         <a href="#" class="nav-link 
-                        {{-- {{ request()->route()->getPrefix() == '/users'? 'active': '' }}"> --}}
+                        {{ request()->route()->getPrefix() == '/users'? 'active': '' }}">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
                                 Users
@@ -103,66 +103,66 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#"
-                                    {{-- class="nav-link {{ Route::is('dokter*') ? 'active' : '' }}"> --}}
+                                {{-- <a href="#"
+                                    class="nav-link {{ Route::is('dokter*') ? 'active' : '' }}">
                                     <i class="nav-icon fa-solid fa-user-doctor"></i>
                                     <p> Dokter</p>
-                                </a>
+                                </a> --}}
                             </li>
                             <li class="nav-item">
-                                <a href="#"
-                                    {{-- class="nav-link {{ Route::is('perawat*') ? 'active' : '' }}"> --}}
+                                {{-- <a href="#"
+                                    class="nav-link {{ Route::is('perawat*') ? 'active' : '' }}">
                                     <i class="nav-icon fa-solid fa-user-nurse"></i>
                                     <p> Perawat</p>
-                                </a>
+                                </a> --}}
                             </li>
                             <li class="nav-item">
-                                <a href="#"
-                                    {{-- class="nav-link {{ Route::is('apoteker*') ? 'active' : '' }}"> --}}
+                                {{-- <a href="#"
+                                    class="nav-link {{ Route::is('apoteker*') ? 'active' : '' }}">
                                     <i class="nav-icon fa-solid fa-user-nurse"></i>
                                     <p> Apoteker</p>
-                                </a>
+                                </a> --}}
                             </li>
                         </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{route('poli.index')}}" class="nav-link 
-                        {{-- {{ Route::is('poli*') ? 'active' : '' }}"> --}}
+                        {{-- <a href="#" class="nav-link 
+                        {{ Route::is('poli*') ? 'active' : '' }}">
                             <i class="nav-icon fa-solid fa-notes-medical"></i>
                             <p> Poli</p>
-                        </a>
+                        </a> --}}
                     </li>
                 {{-- @endcan --}}
                 {{-- @can('AdminDoctorNurse') --}}
                     <li class="nav-item">
-                        <a href="{{route('patient.index')}}" class="nav-link {{ Route::is('pasien*') ? 'active' : '' }}">
+                        {{-- <a href="#" class="nav-link {{ Route::is('pasien*') ? 'active' : '' }}">
                             <i class="nav-icon fa-solid fa-hospital-user"></i>
                             <p> Pasien</p>
-                        </a>
+                        </a> --}}
                     </li>
                     <li class="nav-item">
-                        <a href="#"
+                        {{-- <a href="#"
                             class="nav-link {{ Route::is('antrian*') ? 'active' : '' }}">
                             <i class="nav-icon fa-solid fa-arrow-right"></i>
                             <p> Antrian</p>
-                        </a>
+                        </a> --}}
                     </li>
                 {{-- @endcan --}}
                 {{-- @can('AdminPharmacist') --}}
                     <li class="nav-item">
-                        <a href="#" class="nav-link
-                         {{-- {{ Route::is('obat*') ? 'active' : '' }}"> --}}
+                        {{-- <a href="#" class="nav-link
+                         {{ Route::is('obat*') ? 'active' : '' }}">
                             <i class="nav-icon fa-solid fa-pills"></i>
                             <p> Data Obat</p>
-                        </a>
+                        </a> --}}
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link 
-                        {{-- {{ Route::is('resep-obat*') ? 'active' : '' }}"> --}}
+                        {{-- <a href="#" class="nav-link 
+                        {{ Route::is('resep-obat*') ? 'active' : '' }}">
                             <i class="nav-icon fa-solid fa-hospital-user"></i>
                             <p> Resep Obat</p>
-                        </a>
+                        </a> --}}
                     </li>
                 {{-- @endcan --}}
             </ul>
