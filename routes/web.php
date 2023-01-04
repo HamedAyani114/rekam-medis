@@ -31,7 +31,7 @@ Route::get('/poli', function () {
 });
 
 
-// route resource for patient
+// route resource for patient poli, doctor
 Route::resource('patient', PatientController::class);
 Route::resource('poli', PolyController::class);
 

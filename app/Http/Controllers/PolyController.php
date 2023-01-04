@@ -15,7 +15,7 @@ class PolyController extends Controller
     public function index()
     {
         //
-        $polies = Poly::all();
+        $polies=Poly::all();
         return view('polies.index', compact('polies'));
     }
 
@@ -39,12 +39,23 @@ class PolyController extends Controller
     public function store(Request $request)
     {
         //
-        $datapoli=new Poly();
-        $datapoli->id_poli=$request->id_poli;
-        $datapoli->nama_poli=$request->nama_poli;
-        
-        
-        $datapoli->save();
+        // $datapoli=new Poly();
+        // $datapoli->id_poli=$request->id_poli;
+        // $datapoli->nama_poli=$request->nama_poli;
+        // $datapoli->save();
+
+        $validatedData=$request->validate([
+            // 'id_poli' => 'required',
+            'nama_poli' => 'required',
+        ]);
+        $polyCount=Poly::count()+1;
+        if($polyCount<10){
+            $code='0'.$polyCount;
+        }else{
+            $code=''.$polyCount;
+        }
+        $validatedData['id_poli']='POL'.$code;
+        Poly::create($validatedData);
         return redirect()->route('poli.index')->with('success', 'Data Poli Berhasil Ditambahkan');
         
     }

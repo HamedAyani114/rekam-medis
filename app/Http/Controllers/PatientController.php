@@ -38,37 +38,59 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         //
-        $datapasien=new Patient;
-        $datapasien->id_pasien=$request->id_pasien;
-        $datapasien->no_bpjs=$request->no_bpjs;
-        $datapasien->nama=$request->nama;
-        $datapasien->jenis_kelamin=$request->jenis_kelamin;
-        $datapasien->tgl_lahir=$request->tgl_lahir;
-        $datapasien->tempat_lahir=$request->tempat_lahir;
-        $datapasien->alamat=$request->alamat;
-        $datapasien->no_hp=$request->no_hp;
-        $datapasien->berat_badan=$request->berat_badan;
-        $datapasien->tinggi_badan=$request->tinggi_badan;
-        // dd($datapasien);
-        $datapasien->save();
-        return redirect()->route('patient.index')->with('success', 'Data Pasien Berhasil Ditambahkan');
-        // $datapasien=$request->validate([
-        //     'id_pasien' => 'required|size:5',
-        //     'no_bpjs' => 'required|size:13',
-        //     'nama' => 'required|max:100',
-        //     'jenis_kelamin' => 'required',
-        //     'tgl_lahir' => 'required',
-        //     'tempat_lahir' => 'required|max:50',
-        //     'alamat' => 'required|max:255',
-        //     'no_hp' => 'required|size:15',
-        //     'berat_badan' => 'required',
-        //     'tinggi_badan' => 'required',
-        // ]);
+        // $datapasien=new Patient;
+        // // create patients id
+        //  $patientsCount = Patient::count() + 1;
+        //  if ($patientsCount < 10) {
+        //      $code = '00' . $patientsCount;
+        //  } elseif ($patientsCount < 100) {
+        //      $code = '0' . $patientsCount;
+        //  } else {
+        //      $code = '';
+        //  }
+ 
+        //  $datapasien->id_pasien = 'PA' . $code;
+        // // $datapasien->id_pasien=$request->id_pasien;
+        // $datapasien->no_bpjs=$request->no_bpjs;
+        // $datapasien->nama=$request->nama;
+        // $datapasien->jenis_kelamin=$request->jenis_kelamin;
+        // $datapasien->tgl_lahir=$request->tgl_lahir;
+        // $datapasien->tempat_lahir=$request->tempat_lahir;
+        // $datapasien->alamat=$request->alamat;
+        // $datapasien->no_hp=$request->no_hp;
+        // $datapasien->berat_badan=$request->berat_badan;
+        // $datapasien->tinggi_badan=$request->tinggi_badan;
+        // // dd($datapasien);
+        // $datapasien->save();
+        // return redirect()->route('patient.index')->with('success', 'Data Pasien Berhasil Ditambahkan');
+
+
+        $validatedData=$request->validate([
+            'no_bpjs' => '',
+            'nama' => 'required|max:100',
+            'jenis_kelamin' => 'required',
+            'tgl_lahir' => 'required',
+            'tempat_lahir' => 'required|max:50',
+            'alamat' => 'required|max:255',
+            'no_hp' => 'required|min:8|max:13',
+            'berat_badan' => 'required',
+            'tinggi_badan' => 'required',
+        ]);
+         // create patients id
+         $patientsCount = Patient::count() + 1;
+         if ($patientsCount < 10) {
+             $code = '00' . $patientsCount;
+         } elseif ($patientsCount < 100) {
+             $code = '0' . $patientsCount;
+         } else {
+             $code = '';
+         }
+ 
+         $validatedData['id_pasien'] = 'PA' . $code;
         
-        // dd($datapasien);
-        // Patient::create($datapasien);
-        // Patient::create($request->all());
-        // return redirect()->route('patients.index')->with('success', 'Patient created successfully.');
+        // dd($validatedData);
+        Patient::create($validatedData);
+        return redirect()->route('patient.index')->with('success', 'Patient created successfully.');
     }
 
     /**

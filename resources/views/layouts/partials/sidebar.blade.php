@@ -82,19 +82,19 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <li class="nav-item">
-                    {{-- <a href="{{ route('dashboard.index') }}"
+                    <a href="{{ url('/') }}"
                         class="nav-link {{ Route::is('dashboard*') ? 'active' : '' }}">
                         <i class="nav-icon fa-solid fa-gauge"></i>
                         <p> Dashboard</p>
-                    </a> --}}
+                    </a>
                 </li>
                 {{-- @dd(request()->route()->getPrefix() == '/users') --}}
 
                 {{-- @can('Admin') --}}
                     <li class="nav-item 
-                    {{ request()->route()->getPrefix() == '/users'? 'menu-open': '' }}">
+                    {{ Route::is('doctor*') ? 'menu-open': '' }}">
                         <a href="#" class="nav-link 
-                        {{ request()->route()->getPrefix() == '/users'? 'active': '' }}">
+                        {{ Route::is('doctor*') ? 'active': '' }}">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
                                 Users
@@ -103,11 +103,11 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                {{-- <a href="#"
-                                    class="nav-link {{ Route::is('dokter*') ? 'active' : '' }}">
+                                <a href="{{ route('doctor.index') }}" class="nav-link 
+                                {{ Route::is('doctor*') ? 'active' : '' }}">
                                     <i class="nav-icon fa-solid fa-user-doctor"></i>
-                                    <p> Dokter</p>
-                                </a> --}}
+                                    <p>Dokter</p>
+                                </a>
                             </li>
                             <li class="nav-item">
                                 {{-- <a href="#"
@@ -127,19 +127,19 @@
                     </li>
 
                     <li class="nav-item">
-                        {{-- <a href="#" class="nav-link 
+                        <a href="{{ route('poli.index') }}" class="nav-link 
                         {{ Route::is('poli*') ? 'active' : '' }}">
                             <i class="nav-icon fa-solid fa-notes-medical"></i>
                             <p> Poli</p>
-                        </a> --}}
+                        </a>
                     </li>
                 {{-- @endcan --}}
                 {{-- @can('AdminDoctorNurse') --}}
                     <li class="nav-item">
-                        {{-- <a href="#" class="nav-link {{ Route::is('pasien*') ? 'active' : '' }}">
+                        <a href="{{ route('patient.index') }}" class="nav-link {{ Route::is('patient*') ? 'active' : '' }}">
                             <i class="nav-icon fa-solid fa-hospital-user"></i>
                             <p> Pasien</p>
-                        </a> --}}
+                        </a>
                     </li>
                     <li class="nav-item">
                         {{-- <a href="#"

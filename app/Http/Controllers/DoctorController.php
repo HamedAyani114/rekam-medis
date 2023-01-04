@@ -118,9 +118,50 @@ class DoctorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Doctor $dokter)
     {
-        //
+        // if request photo is true
+        // return var_dump($request->photo);
+        if($request->photo) {
+            $validatedData = $request->validate([
+                'photo' => ['nullable', 'image', 'file', 'max:1024']
+            ]);
+            $file= $request->file('photo');
+            $filename=time().'_'.$file->getClientOriginalName();
+            $validatedData['photo'] = $file->move('user-photo', $filename);
+
+            Doctor::where('id_dokter', $dokter->id_dokter)->update($validatedData);
+            
+            return back()->with('success', 'Foto berhasil di update');
+        }
+
+        // data validation
+        $rules = [
+            'nama' => ['required', 'max:100'],
+            'jenis_kelamin' => ['required'],
+            'tgl_lahir' => ['nullable', 'date'],
+            'id_poli' => ['required'],
+            'tempat_lahir' => ['nullable', 'max:50'],
+            'alamat' => ['nullable', 'max:255'],
+        ];
+
+        // rules if request number, email is equal doctor
+        if($request->no_hp !== $dokter->no_hp) {
+            $rules['no_hp'] = ['required', 'numeric', 'unique:doctors', 'max_digits:15'];
+        }
+
+        if($request->email !== $dokter->email) {
+            $rules['email'] = ['nullable', 'email:dns', 'unique:doctors', 'max:50'];
+        }
+
+        $validatedData = $request->validate($rules);
+
+        // update
+        Doctor::where('id_dokter', $dokter->id_dokter)
+                ->update($validatedData);
+
+        return back()->with('success', 'Data berhasil di update')
+                ->with('success', 'Data berhasil di update');
     }
 
     /**

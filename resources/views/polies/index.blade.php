@@ -43,7 +43,7 @@
                                             <form action="{{ route('poli.store') }}" method="post">
                                                 <div class="modal-body">
                                                     @csrf
-                                                    <div class="form-group">
+                                                    {{-- <div class="form-group">
                                                         <label for="id_poli">Kode Poli</label>
                                                         <input type="text"
                                                             class="form-control @error('id_poli') is-invalid @enderror"
@@ -54,7 +54,7 @@
                                                                 {{ $message }}
                                                             </p>
                                                         @enderror
-                                                    </div>
+                                                    </div> --}}
                                                     <div class="form-group">
                                                         <label for="nama_poli">Nama Poli</label>
                                                         <input type="text"

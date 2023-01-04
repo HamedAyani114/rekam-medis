@@ -22,12 +22,12 @@
                                     </div>
                                 @endif --}}
 
-                                {{-- @can('nurse')
-                                    <a href="{{ route('pasien.create') }}" class="btn btn-info btn-sm mb-2">
+                                {{-- @can('nurse') --}}
+                                    <a href="{{ route('patient.create') }}" class="btn btn-info btn-sm mb-2">
                                         <i class="fa-solid fa-plus"></i>
                                         Tambah Data
                                     </a>
-                                @endcan --}}
+                                {{-- @endcan --}}
                                 <table id="patients_table" class="table table-bordered table-striped dataTable dtr-inline"
                                     aria-describedby="patients_table_info">
                                     <thead>
@@ -78,16 +78,16 @@
                                                                 href="{{ route('pasien.show', $patient->id_pasien) }}">
                                                                 <i class="fa-solid fa-circle-info"></i>
                                                                 Detail
-                                                            </a> --}}
+                                                            </a> 
 
-                                                            {{-- @can('nurse')
+                                                            @can('nurse')--}}
                                                                 <a class="dropdown-item text-warning"
-                                                                    href="{{ route('pasien.edit', $patient->id_pasien) }}">
+                                                                    href="{{ route('patient.edit', $patient->id_pasien) }}">
                                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                                     Edit
                                                                 </a>
                                                                 <div class="dropdown-divider"></div>
-                                                                <form
+                                                                {{-- <form
                                                                     action="{{ route('pasien.destroy', $patient->id_pasien) }}"
                                                                     method="POST">
                                                                     @csrf
