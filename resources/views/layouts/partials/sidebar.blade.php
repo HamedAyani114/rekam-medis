@@ -82,7 +82,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <li class="nav-item">
-                    {{-- <a href="{{ route('dashboard.index') }}" --}}
+                    <a href="{{ route('dashboard.index') }}"
                         {{-- class="nav-link {{ Route::is('dashboard*') ? 'active' : '' }}"> --}}
                         <i class="nav-icon fa-solid fa-gauge"></i>
                         <p> Dashboard</p>
@@ -127,7 +127,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link 
+                        <a href="{{route('poli.index')}}" class="nav-link 
                         {{-- {{ Route::is('poli*') ? 'active' : '' }}"> --}}
                             <i class="nav-icon fa-solid fa-notes-medical"></i>
                             <p> Poli</p>
@@ -136,7 +136,7 @@
                 {{-- @endcan --}}
                 {{-- @can('AdminDoctorNurse') --}}
                     <li class="nav-item">
-                        <a href="#" class="nav-link {{ Route::is('pasien*') ? 'active' : '' }}">
+                        <a href="{{route('patient.index')}}" class="nav-link {{ Route::is('pasien*') ? 'active' : '' }}">
                             <i class="nav-icon fa-solid fa-hospital-user"></i>
                             <p> Pasien</p>
                         </a>

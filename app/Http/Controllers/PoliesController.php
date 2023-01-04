@@ -38,7 +38,7 @@ class PoliesController extends Controller
     public function store(Request $request)
     {
         //
-        $datapoli=new poli;
+        $datapoli=new Polies;
         $datapoli->id_poli=$request->id_poli;
         $datapoli->nama_poli=$request->nama_poli;
         
