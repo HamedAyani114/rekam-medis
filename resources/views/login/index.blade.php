@@ -31,7 +31,7 @@
         </div>
         @endif --}}
         
-        <form method="POST" action="{{route('loginStore')}}">
+        <form method="POST" action="/login">
           @csrf
         <div class="divider d-flex align-items-center my-4">
             <p class="text-center fw-bold mx-3 mb-0">LOGIN</p>
@@ -63,7 +63,6 @@
             {{-- <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/register"
                 class="link-danger">Register</a></p> --}}
           </div>
-
         </form>
       </div>
     </div>

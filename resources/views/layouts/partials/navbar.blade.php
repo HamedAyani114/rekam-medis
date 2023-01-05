@@ -3,7 +3,7 @@
   <!-- Left navbar links -->
   <ul class="navbar-nav">
       <li class="nav-item">
-          {{-- <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a> --}}
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
           {{-- <a href="{{ route('dashboard.index') }}" class="nav-link">Sistem Informasi Rekam Medis</a> --}}
@@ -13,7 +13,7 @@
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        logout
+        {{-- logout --}}
           <form action="{{ route('logout') }}" method="post">
               @csrf
               <button class="nav-link" style="background-color: transparent; border: none;"

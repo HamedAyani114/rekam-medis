@@ -17,9 +17,9 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard.index');
-});
+// Route::get('/', function () {
+//     return view('dashboard.index');
+// });
 
 // // Route::get('/login', function () {
     // //     return view('login.index');
@@ -34,6 +34,7 @@ Route::get('/', function () {
 
 
 Route::middleware(['guest'])->group(function () {
+    Route::get('/', [AuthController::class, 'loginView'])->name('loginView');
     Route::get('/login', [AuthController::class, 'loginView'])->name('loginView');
     Route::post('/login', [AuthController::class, 'loginStore'])->name('loginStore');
 });
@@ -42,7 +43,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard.index');
     });
-    
     Route::resource('doctor', DoctorController::class);
     Route::resource('patient', PatientController::class);
     Route::resource('poli', PolyController::class);
