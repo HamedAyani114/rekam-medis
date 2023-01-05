@@ -14,14 +14,14 @@
   <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         logout
-          {{-- <form action="{{ route('logout') }}" method="post">
+          <form action="{{ route('logout') }}" method="post">
               @csrf
               <button class="nav-link" style="background-color: transparent; border: none;"
                   onclick="return confirm('Anda yakin ingin keluar?')">
                   <i class="fa-solid fa-right-to-bracket"></i>
                   Logout
               </button>
-          </form> --}}
+          </form>
       </li>
   </ul>
 </nav>

@@ -31,16 +31,16 @@
         </div>
         @endif --}}
         
-        <form method="POST" action="/login">
+        <form method="POST" action="{{route('loginStore')}}">
           @csrf
         <div class="divider d-flex align-items-center my-4">
             <p class="text-center fw-bold mx-3 mb-0">LOGIN</p>
           </div>
           <!-- Email input -->
           <div class="form-outline mb-2">
-            <input type="email" name="email" id="email" class="form-control form-control-lg @error('email') is-invalid @enderror"
-              placeholder="Enter a valid email" autofocus required value="{{ old('email') }}"/>
-            <label class="form-label" for="email">Email</label>
+            <input type="text" name="username" id="username" class="form-control form-control-lg @error('username') is-invalid @enderror"
+              placeholder="Enter a valid email" autofocus required value="{{ old('username') }}"/>
+            <label class="form-label" for="username">username</label>
             {{-- @error('email')
             <div class="invalid-feedback" role="alert">
               {{ $message }}
