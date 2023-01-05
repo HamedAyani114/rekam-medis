@@ -31,8 +31,6 @@ use App\Http\Controllers\AuthController;
         
         // route resource for patient poli, doctor
         
-
-
 Route::middleware(['guest'])->group(function () {
     Route::get('/', [AuthController::class, 'loginView'])->name('loginView');
     Route::get('/login', [AuthController::class, 'loginView'])->name('loginView');
