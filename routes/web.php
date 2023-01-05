@@ -5,6 +5,8 @@ use App\Http\Controllers\PatientController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\PolyController;
 use App\Http\Controllers\AuthController;
+use Faker\Guesser\Name;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,10 +42,10 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard.index');
-    });
-    Route::resource('doctor', DoctorController::class);
-    Route::resource('patient', PatientController::class);
-    Route::resource('poli', PolyController::class);
+    })->name('dashboard.index');
+    Route::resource('doctor', DoctorController::class)->middleware('admin');
+    Route::resource('patient', PatientController::class)->middleware('dokter');
+    Route::resource('poli', PolyController::class)->middleware('admin');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
@@ -52,4 +54,3 @@ Route::middleware(['auth'])->group(function () {
 // Route::get('/pasien', [PatientController::class, 'index'])->name('patient.index');
 // Route::get('/pasien/create', [PatientController::class, 'create'])->name('patient.create');
 // Route::post('/pasien', [PatientController::class, 'store'])->name('patient.store');
-

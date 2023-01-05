@@ -27,6 +27,7 @@ class AuthController extends Controller
             'username' => 'Akun tidak ditemukan'
         ])->onlyInput('username');
     }
+    
     public function logout(Request $request) {
         Auth::logout();
     
