@@ -20,7 +20,7 @@ class DoctorController extends Controller
     {
         // SELECT d.nama, p.nama_poli, d.no_hp, d.jenis_kelamin FROM doctors d INNER JOIN polies p USING(id_poli);
         $doctors = Doctor::join('polies', 'doctors.id_poli', '=', 'polies.id_poli')
-            ->select('doctors.nama', 'polies.nama_poli', 'doctors.no_hp', 'doctors.jenis_kelamin')
+            ->select('doctors.*', 'polies.nama_poli')
             ->get();
         return view('doctor.index', compact('doctors'));
     }
@@ -34,8 +34,7 @@ class DoctorController extends Controller
     {
         // return view('doctor.create');
         return view('doctor.create', [
-            'pageTitle' => 'Tambah dokter',
-            'doctors' => Doctor::latest()->limit(5)->pluck('nama', 'id_dokter'),
+            'doctors' => Doctor::all(),
             'polies' => Poly::all()
         ]);
     }

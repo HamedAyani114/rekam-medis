@@ -23,9 +23,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
-// Route::get('/pasien', function () {
-//     return view('home.pasien');
-// });
+Route::get('/login', function () {
+    return view('login.index');
+});
 Route::get('/poli', function () {
     return view('polies.index');
 });

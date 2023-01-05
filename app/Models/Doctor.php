@@ -27,10 +27,10 @@ class Doctor extends Model
         return $this->belongsTo(User::class, 'id');
     }
 
-    // public function poly()
-    // {
-    //     return $this->belongsTo(Poly::class, 'id_poli');
-    // }
+    public function poly()
+    {
+        return $this->belongsTo(Poly::class, 'id_poli');
+    }
 
     // public function medicalRecord()
     // {
