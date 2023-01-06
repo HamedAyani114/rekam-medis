@@ -20,16 +20,16 @@ class QueueController extends Controller
         //
         $queues = Queue::all();
 
-        // if (auth()->user()->role === 'dokter') {
-        //     $queues = Queue::where('id_poli', auth()->user()->doctor->id_poli)->get();
-        // }
+        if (auth()->user()->role === 'dokter') {
+            $queues = Queue::where('id_poli', auth()->user()->doctor->id_poli)->get();
+        }
         // dd($queues);
 
         return view('queues.index', [
             'pageTitle' => 'Data Antrian',
             'queues' => $queues,
-            // 'patients' => Patient::latest()->pluck('nama', 'id_pasien'),
-            // 'polies' => Poly::latest()->pluck('nama_poli', 'id_poli'),
+            'patients' => Patient::latest()->pluck('nama', 'id_pasien'),
+            'polies' => Poly::latest()->pluck('nama_poli', 'id_poli'),
         ]);
     }
 
@@ -52,6 +52,16 @@ class QueueController extends Controller
     public function store(Request $request)
     {
         //
+        $validatedData = $request->validate([
+            'id_pasien' => ['required', 'unique:queues', 'size:5'],
+            'id_poli' => ['required', 'size:5'],
+        ]);
+        $validatedData['status'] = 0;
+
+        Queue::create($validatedData);
+
+        return redirect()->back()
+            ->with('success', 'Data berhasil ditambahkan ke antrian');
     }
 
     /**

@@ -32,9 +32,9 @@ class User extends Authenticatable
     //     return $this->hasOne(Nurse::class, 'id');
     // }
 
-    // public function doctor() {
-    //     return $this->hasOne(Doctor::class, 'id');
-    // }
+    public function doctor() {
+        return $this->hasOne(Doctor::class, 'id');
+    }
 
     // public function pharmacist() {
     //     return $this->hasOne(Pharmacist::class, 'id');

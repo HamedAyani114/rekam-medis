@@ -15,7 +15,7 @@ class Doctor extends Model
     public $incrementing = false;
 
     protected $guarded = [''];
-    // protected $with = ['poly'];
+    protected $with = ['poly'];
 
     public function getRouteKeyName()
     {

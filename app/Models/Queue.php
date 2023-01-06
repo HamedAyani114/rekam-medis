@@ -13,7 +13,7 @@ class Queue extends Model
     protected $guarded = ['id_antrian'];
     protected $primaryKey = 'id_antrian';
 
-    // protected $with = ['patient', 'poly'];
+    protected $with = ['patient', 'poly'];
 
     public function getRouteKeyName()
     {

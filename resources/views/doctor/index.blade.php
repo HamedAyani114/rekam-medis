@@ -22,13 +22,13 @@
                                     </div>
                                 @endif
                                 <div class="card card-secondary">
-                                    <div class="card-header">
+                                    {{-- <div class="card-header">
                                       <h3 class="card-title">Bootstrap Switch</h3>
                                     </div>
                                     <div class="card-body">
                                       <input type="checkbox" name="my-checkbox" checked data-bootstrap-switch>
                                       <input type="checkbox" name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
-                                    </div>
+                                    </div> --}}
                                   </div>
                                 <a href="{{ route('doctor.create') }}" class="btn btn-info btn-sm mb-2">
                                     <i class="fa-solid fa-plus"></i>
