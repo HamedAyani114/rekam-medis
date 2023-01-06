@@ -5,6 +5,7 @@ use App\Http\Controllers\PatientController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\PolyController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\QueueController;
 use Faker\Guesser\Name;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -46,6 +47,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('doctor', DoctorController::class)->middleware('admin');
     Route::resource('patient', PatientController::class)->middleware('dokter');
     Route::resource('poli', PolyController::class)->middleware('admin');
+    Route::resource('antrian', QueueController::class);
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

@@ -87,8 +87,8 @@
                                                                     Edit
                                                                 </a>
                                                                 <div class="dropdown-divider"></div>
-                                                                <form
-                                                                    action="{{ route('pasien.destroy', $patient->id_pasien) }}"
+                                                                {{-- <form
+                                                                    action="{{ route('patient.destroy', $patient->id_pasien) }}"
                                                                     method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
@@ -97,7 +97,7 @@
                                                                         <i class="fa-solid fa-trash"></i>
                                                                         Hapus
                                                                     </button>
-                                                                </form>
+                                                                </form> --}}
                                                             {{-- @endcan --}}
                                                         </div>
                                                     </div>

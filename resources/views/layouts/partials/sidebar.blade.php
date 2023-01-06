@@ -143,11 +143,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        {{-- <a href="#"
+                        <a href="{{ route('antrian.index') }}"
                             class="nav-link {{ Route::is('antrian*') ? 'active' : '' }}">
                             <i class="nav-icon fa-solid fa-arrow-right"></i>
                             <p> Antrian</p>
-                        </a> --}}
+                        </a>
                     </li>
                 @endcan
                 {{-- @can('AdminPharmacist') --}}

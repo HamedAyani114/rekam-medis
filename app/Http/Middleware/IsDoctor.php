@@ -16,7 +16,7 @@ class IsDoctor
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user()->role === 'dokter') {
+        if (auth()->user()->role === 'dokter' || auth()->user()->role === 'admin') {
             return $next($request);
         }
 
