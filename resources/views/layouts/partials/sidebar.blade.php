@@ -135,7 +135,7 @@
                     </li>
                 @endcan
 
-                @can('Doctor')
+                @can('DoctorAdmin')
                     <li class="nav-item">
                         <a href="{{ route('patient.index') }}" class="nav-link {{ Route::is('patient*') ? 'active' : '' }}">
                             <i class="nav-icon fa-solid fa-hospital-user"></i>

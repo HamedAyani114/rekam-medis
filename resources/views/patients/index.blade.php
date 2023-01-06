@@ -78,16 +78,16 @@
                                                                 href="{{ route('pasien.show', $patient->id_pasien) }}">
                                                                 <i class="fa-solid fa-circle-info"></i>
                                                                 Detail
-                                                            </a> 
+                                                            </a>  --}}
 
-                                                            @can('nurse')--}}
+                                                            {{-- @can('nurse') --}}
                                                                 <a class="dropdown-item text-warning"
                                                                     href="{{ route('patient.edit', $patient->id_pasien) }}">
                                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                                     Edit
                                                                 </a>
                                                                 <div class="dropdown-divider"></div>
-                                                                {{-- <form
+                                                                <form
                                                                     action="{{ route('pasien.destroy', $patient->id_pasien) }}"
                                                                     method="POST">
                                                                     @csrf
@@ -98,7 +98,7 @@
                                                                         Hapus
                                                                     </button>
                                                                 </form>
-                                                            @endcan --}}
+                                                            {{-- @endcan --}}
                                                         </div>
                                                     </div>
                                                 </td>
