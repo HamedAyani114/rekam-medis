@@ -57,6 +57,7 @@ class QueueController extends Controller
             'id_poli' => ['required', 'size:5'],
         ]);
         $validatedData['status'] = 0;
+        // dd($validatedData);
 
         Queue::create($validatedData);
 
