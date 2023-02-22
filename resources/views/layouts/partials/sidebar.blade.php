@@ -83,7 +83,7 @@
                 data-accordion="false">
                 <li class="nav-item">
                     <a href="{{ url('/') }}"
-                        class="nav-link {{ Route::is('dashboard*') ? 'active' : '' }}">
+                        class="nav-link {{ Route::is('dashboard.index') ? 'active' : '' }}">
                         <i class="nav-icon fa-solid fa-gauge"></i>
                         <p> Dashboard</p>
                     </a>
